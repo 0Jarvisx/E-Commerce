@@ -12,7 +12,7 @@
                     <span class="font-medium uppercase text-gray-600">Carrito</span>
                 </a>
                 {{-- Arreglar el diseño  --}}
-                <form method="POST" action="{{-- {{ route('logout') }} --}}">
+                <form method="POST" action="{{ route('logout') }}">
                     @csrf {{-- token de autenticacion --}}
                     <button class="flex flex-col items-center mx-2" type="submit">
 
@@ -25,11 +25,11 @@
         @endauth
         @guest
             <nav class="flex gap-1 items-center">
-                <a class="flex flex-col items-center mx-2" href="">
+                <a class="flex flex-col items-center mx-2" href="{{ route('login') }}">
                     <img src="{{ asset('img/usuario.svg') }}" alt="Login" class="w-6 h-6">
                     <span class="font-medium uppercase text-gray-600">Login</span>
                 </a>
-                <a class="flex flex-col items-center mx-2" href="">
+                <a class="flex flex-col items-center mx-2" href="{{ route('register') }}">
                     <img src="{{ asset('img/agregar-usuario.svg') }}" alt="Nueva Cuenta" class="w-6 h-6">
                     <span class="font-medium uppercase text-gray-600">Registrarse</span>
                 </a>

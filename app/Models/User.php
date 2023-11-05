@@ -21,8 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'rol_id',
-        'credit_card_id',
+        'role_id',
         'estado_id',
     ];
 
@@ -50,8 +49,11 @@ class User extends Authenticatable
         return $this->hasMany(Orden::class);
     }
 
-
     public function role(){
-        return $this->hasMany(Roles::class);
+        return $this->belongsTo(Roles::class);
+    }
+
+    public function estado(){
+        return $this->belongsTo(Estado::class);
     }
 }
