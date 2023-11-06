@@ -23,3 +23,4 @@ Route::get('/login',[LoginController::class,'index'])->name('login');
 Route::post('/login',[LoginController::class, 'store']) ->name('login');
 
 Route::get('/{user:name}', [HomeController::class, 'index']) ->name('registrado');
+Route::get('/Dashboard/{user:name}', [DashboardController::class, 'index'])->name('dashboard');
