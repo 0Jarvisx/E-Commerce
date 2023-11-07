@@ -36,4 +36,56 @@ class DashboardController extends Controller
             'user' => $user
         ]);
     }
+
+    public function detailsUser(User $user)
+    {
+        $usuarios = User::with('role', 'estado')->get();
+        $roles = Roles::all();
+        $estados = Estado::all();
+
+        return view('admin.adminUser', [
+            'user' => $user,
+            'usuarios' => $usuarios,
+            'roles' => $roles,
+            'estados' => $estados
+        ]);
+    }
+
+    public function detailsProducto(User $user)
+    {
+        $productos = Producto::all();
+        $categorias = Categoria::all();
+        $estados = Estado::all();
+
+        return view('admin.adminProducto', [
+            'user' => $user,
+            'productos' => $productos,
+            'categorias' => $categorias,
+            'estados' => $estados
+        ]);
+    }
+
+    public function detailsOrden(User $user)
+    {
+        $productos = Producto::all();
+        $ordens = Orden::with('user','estado')->get();
+        $estados = Estado::all();
+
+        return view('admin.adminOrden', [
+            'user' => $user,
+            'productos' => $productos,
+            'ordens' => $ordens,
+            'estados' => $estados
+        ]);
+    }
+
+    public function detailsCategoria(User $user)
+    {
+        $categorias = Producto::all();
+
+        return view('admin.adminCategoria', [
+            'user' => $user,
+            'categorias' => $categorias,
+        ]);
+    }
 }

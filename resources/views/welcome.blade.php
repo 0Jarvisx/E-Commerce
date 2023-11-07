@@ -9,4 +9,5 @@
             </h1>
         </div>
     @endforeach
+    {{$productos->count()}}
 @endsection

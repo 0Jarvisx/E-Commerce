@@ -52,7 +52,7 @@
                                     </label>
                                     @error('apellido')
                                         <p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
-                                            Route::get('/Dashboard/{user:name}', [DashboardController::class, 'index'])->name('dashboard');                            {{ $message }}</p>
+                                            {{ $message }}</p>
                                     @enderror
                                 </div>
 
@@ -68,7 +68,7 @@
                                 <div class="relative hidden">
                                     <input autocomplete="off" id="estado_id" name="estado_id" type="number"
                                         class="peer placeholder-transparent h-10 w-full border-b-2  text-gray-900 focus:outline-none focus:borer-rose-600 bg-transparent"
-                                        placeholder="Rol" value="1" />
+                                        placeholder="Rol" value="2" />
                                     <label for="estado_id"
                                         class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Rol
                                     </label>
